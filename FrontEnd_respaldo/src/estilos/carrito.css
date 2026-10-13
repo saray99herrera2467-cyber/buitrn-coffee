@@ -1,0 +1,503 @@
+.header{
+  background:#c0392b;
+  padding:15px 40px;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  color:white;
+  position:relative;
+}
+
+.logo-header{
+  position: absolute;
+  right: 190px;
+  font-size:28px;
+  font-weight:bold;
+  margin-right:27%;
+  cursor:pointer;
+}
+
+.logo-img{
+  position:absolute;
+  left:50px;
+  bottom: -55px;
+  height:100px;
+}
+
+.icons{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.icons i{
+  cursor:pointer;
+  padding:5px;
+  font-size:20px;
+  color:white;
+}
+
+/* SEARCH */
+.search-box{
+  position:relative;
+}
+
+.search-box input{
+  padding:6px 30px 6px 10px;
+  border-radius:20px;
+  border:none;
+  font-size:16px;
+  outline:none;
+}
+
+.search-box input::placeholder{
+  color:#999;
+}
+
+.search-box .fa-magnifying-glass{
+  position:absolute;
+  right:8px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#b52b1e;
+  cursor:pointer;
+}
+
+/* NAV */
+.nav{
+  background:#c0392b;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+}
+
+.nav button{
+  background:rgb(168, 27, 27);
+  border:none;
+  padding:6px 16px;
+  border-radius:20px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:14px;
+  color:white;
+}
+
+.nav button:hover{
+  background:#91716e;
+}
+.carrito-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.carrito-container h1 {
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.carrito-content {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+}
+
+.carrito-items table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.carrito-items th {
+  background: #f5f5f5;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+}
+
+.carrito-items td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.producto-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.producto-info img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.producto-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.producto-info p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.cantidad-input {
+  width: 60px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.btn-eliminar {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #ff4444;
+  transition: transform 0.2s;
+}
+
+.btn-eliminar:hover {
+  transform: scale(1.1);
+}
+
+.carrito-resumen {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.carrito-resumen h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.resumen-linea {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.resumen-linea.total {
+  border-bottom: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 2px solid #333;
+}
+
+.btn-primary, .btn-secundario, .btn-link {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: #c49a6c;
+  color: white;
+  width: 200px;
+}
+
+.btn-primary:hover {
+  background: #b0865a;
+}
+
+.btn-secundario {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.btn-secundario:hover {
+  background: #e0e0e0;
+}
+
+.btn-link {
+  background: none;
+  color: #c49a6c;
+  text-decoration: underline;
+}
+
+.carrito-vacio {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.carrito-vacio h2 {
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.carrito-vacio button {
+  width: auto;
+  padding: 0.75rem 2rem;
+}
+
+.cargando {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .carrito-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .producto-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .carrito-items table, 
+  .carrito-items thead, 
+  .carrito-items tbody, 
+  .carrito-items tr, 
+  .carrito-items td {
+    display: block;
+  }
+  
+  .carrito-items thead {
+    display: none;
+  }
+  
+  .carrito-items tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  
+  .carrito-items td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border: none;
+  }
+  
+  .carrito-items td:before {
+    content: attr(data-label);
+    font-weight: bold;
+  }
+}
+
+
+
+
+
+
+
+
+/* ============================================
+   ESTILOS PARA EL RECIBO (DESPUÉS DE LA COMPRA)
+   ============================================ */
+
+.recibo-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recibo-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  padding: 40px 35px;
+  text-align: center;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Decoración de la tarjeta */
+.recibo-card::before {
+  content: "✓";
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  font-size: 120px;
+  opacity: 0.05;
+  font-weight: bold;
+  color: #27ae60;
+  transform: rotate(15deg);
+  pointer-events: none;
+}
+
+.recibo-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #27ae60, #2c3e50, #f39c12);
+}
+
+/* Título del recibo */
+.recibo-card h1 {
+  font-size: 28px;
+  color: #27ae60;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.recibo-card h1::before {
+  content: "✅ ";
+  font-size: 32px;
+}
+
+/* Texto del recibo */
+.recibo-card p {
+  color: #4a5568;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.recibo-card p strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Número de pedido destacado */
+.recibo-card p:has(strong) {
+  background: #f0fdf4;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 40px;
+  margin: 15px 0;
+  font-family: monospace;
+  font-size: 18px;
+}
+
+/* Botones del recibo */
+.recibo-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.btn-descargar {
+  background: linear-gradient(135deg, #27ae60 0%, #219a52 100%);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-descargar:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+  background: linear-gradient(135deg, #219a52 0%, #1e8748 100%);
+}
+
+.btn-descargar:disabled {
+  opacity: 0.7;
+  cursor: wait;
+  transform: none;
+}
+
+.btn-seguir {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-seguir:hover {
+  background: #1e2b36;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-error {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .recibo-container {
+    margin: 20px auto;
+    padding: 15px;
+  }
+  
+  .recibo-card {
+    padding: 25px 20px;
+  }
+  
+  .recibo-card h1 {
+    font-size: 22px;
+  }
+  
+  .recibo-actions {
+    flex-direction: column;
+  }
+  
+  .btn-descargar,
+  .btn-seguir {
+    width: 100%;
+    justify-content: center;
+  }
+}

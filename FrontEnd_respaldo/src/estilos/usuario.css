@@ -1,0 +1,239 @@
+/* usuario.css - Versión mejorada */
+
+.usuario-page {
+  min-height: 100vh;
+  background: #f5f7fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header de navegación */
+.nav {
+  background: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+}
+
+.btn-regresar {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.btn-regresar:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+.btn-cerrar-sesion {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.btn-cerrar-sesion:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+
+/* Contenedor principal */
+.perfil-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.perfil-container h1 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* Tabs - Versión mejorada */
+.tabs-usuario {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #6c757d;
+  transition: all 0.25s ease;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+
+.tab-btn:hover {
+  color: #2c3e50;
+  background: #f0f2f5;
+}
+
+.tab-btn.active {
+  color: #2c3e50;
+  background: #f8f9fa;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #2c3e50;
+}
+
+/* Tarjeta de perfil */
+.perfil-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Sección de foto */
+.foto-section {
+  background: #f8f9fa;
+  padding: 40px 30px;
+  text-align: center;
+  border-right: 1px solid #e9ecef;
+  min-width: 220px;
+}
+
+.avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #1c3bc1 0%, #6b0bcb 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Sección de información */
+.info-section {
+  flex: 1;
+  padding: 35px 40px;
+}
+
+/* Campos del formulario - Mejorados */
+.campo-formulario {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-formulario label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.campo-formulario input {
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s;
+  background: white;
+}
+
+.campo-formulario input:hover {
+  border-color: #cbd5e0;
+}
+
+.campo-formulario input:focus {
+  outline: none;
+  border-color: #2c3e50;
+  box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+}
+
+/* Botón guardar */
+.btn-guardar {
+  background: #990606;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 15px;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.btn-guardar:hover {
+  background: #7f2b2b;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+  }
+  
+  .tabs-usuario {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tab-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+  
+  .perfil-card {
+    flex-direction: column;
+  }
+  
+  .foto-section {
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+    padding: 30px;
+  }
+  
+  .info-section {
+    padding: 25px;
+  }
+  
+  .avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    font-size: 38px;
+  }
+}

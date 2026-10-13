@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e9ecef;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-wrapper {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.admin-header {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-header h1 {
+  font-size: 22px;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+/* Estilos del usuario */
+.user-avatar {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+  position: relative;
+  left: -120px;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 15px;
+}
+
+.user-role {
+  font-size: 11px;
+  color: #7f8c8d;
+  letter-spacing: 0.3px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logout-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.logout-btn:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+/* Layout de dos columnas */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.column {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-header {
+  padding: 18px 25px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.column-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
+}
+
+.column-buttons {
+  padding: 20px 25px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  flex: 1;
+  align-content: flex-start;
+}
+
+/* Fila de PQRS - Centrada */
+.pqrs-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.pqrs-column {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Botones */
+.menu-btn {
+  padding: 8px 22px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  color: white;
+}
+
+.menu-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn-ver {
+  background: #2c3e50;
+}
+
+.btn-resenas {
+  background: #078cbc;
+}
+
+.btn-resenas:hover {
+  background: #08607d;
+}
+
+.btn-inhabilitar {
+  background: #7f8c8d;
+}
+
+.btn-crear {
+  background: #27ae60;
+}
+
+.btn-actualizar {
+  background: #f39c12;
+  color: #fff;
+}
+
+.btn-actualizar:hover {
+  background: #e67e22;
+}
+
+.btn-cambiar-rol {
+  background: #8e44ad;
+}
+
+.btn-cambiar-rol:hover {
+  background: #7d3c98;
+}
+
+.btn-pqrs {
+  background: #8e44ad;
+}
+
+.btn-pqrs:hover {
+  background: #7d3c98;
+}
+
+.btn-pedidos {
+  background: #16a085;
+}
+
+.btn-pedidos:hover {
+  background: #138d75;
+}
+
+/* Footer básico */
+.admin-footer-basico {
+  background: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 13px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 40px);
+}
+
+.admin-footer-basico p {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-wrapper {
+    padding: 15px;
+  }
+  
+  .admin-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .two-columns {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .column-buttons {
+    justify-content: center;
+  }
+  
+  .column-header {
+    text-align: center;
+  }
+  
+  .pqrs-column {
+    max-width: 100%;
+  }
+  
+  .admin-footer-basico {
+    width: calc(100% - 30px);
+  }
+}

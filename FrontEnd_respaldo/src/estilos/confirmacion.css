@@ -1,0 +1,118 @@
+.confirmacion-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.confirmacion-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.icono-exito {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.confirmacion-card h1 {
+  color: #C49A6C;
+  margin-bottom: 1rem;
+}
+
+.mensaje {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.info-pedido {
+  background: #F9F9F9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.info-pedido h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.info-linea {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.productos-resumen {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.productos-resumen h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.producto-resumen {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.acciones {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.acciones a, .acciones button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.acciones a {
+  background: #C49A6C;
+  color: white;
+}
+
+.acciones a:hover {
+  background: #b0865a;
+}
+
+.formulario-pago {
+  margin-top: 1rem;
+}
+
+.formulario-pago h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cargando {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .acciones {
+    flex-direction: column;
+  }
+  
+  .confirmacion-card {
+    padding: 1.5rem;
+  }
+}

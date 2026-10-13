@@ -1,0 +1,64 @@
+/* FORMULARIO PQRS */
+.pqrs-form {
+  background-color: #7e0501;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.pqrs-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+/* HERO */
+.catalogo .hero {
+  height: 280px;
+  background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') no-repeat center/cover;
+}
+
+/* SECTION */
+.catalogo .section {
+  padding: 40px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .catalogo .header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .catalogo .logo-img {
+    position: static;
+    height: 80px;
+  }
+
+  .catalogo .logo-header {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .catalogo .header {
+    padding: 20px;
+  }
+
+  .catalogo .logo-header {
+    font-size: 22px;
+  }
+
+  .catalogo .hero {
+    height: 180px;
+  }
+
+  .catalogo .section {
+    padding: 20px;
+  }
+}

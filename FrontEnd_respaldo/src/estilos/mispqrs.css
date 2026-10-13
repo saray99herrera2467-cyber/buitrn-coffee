@@ -1,0 +1,275 @@
+.mis-pqrs-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.mis-pqrs-header {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.mis-pqrs-header h2 {
+  color: #2c3e50;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.mis-pqrs-header p {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.sin-pqrs {
+  text-align: center;
+  padding: 50px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.sin-pqrs p {
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.btn-realizar-pqrs {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-realizar-pqrs:hover {
+  background: #1e2b36;
+}
+
+/* Estilos para la tabla de PQRS - Mejorados */
+.pqrs-table-container {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.pqrs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.pqrs-table th {
+  background: #f8f9fa;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #4a5568;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.pqrs-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #495057;
+}
+
+.pqrs-table tr:hover {
+  background: #fafbfc;
+}
+
+.btn-ver-detalle {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-ver-detalle:hover {
+  background: #1e2b36;
+  transform: translateY(-1px);
+}
+
+/* Badges de estado */
+.estado-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.estado-pendiente {
+  background: #fff3e0;
+  color: #e67e22;
+}
+
+.estado-proceso {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.estado-resuelta {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.estado-cerrada {
+  background: #eceff1;
+  color: #546e7a;
+}
+
+.btn-ver-detalle {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-ver-detalle:hover {
+  background: #1e2b36;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-detalle {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 550px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 18px;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6c757d;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.detalle-item {
+  margin-bottom: 15px;
+}
+
+.detalle-item strong {
+  display: block;
+  color: #2c3e50;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.detalle-item span {
+  color: #495057;
+  font-size: 14px;
+}
+
+.descripcion-texto,
+.respuesta-texto {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 5px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.respuesta {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e9ecef;
+}
+
+.respuesta-texto {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  text-align: right;
+}
+
+.btn-cerrar {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .pqrs-table {
+    font-size: 12px;
+  }
+  
+  .pqrs-table th,
+  .pqrs-table td {
+    padding: 8px;
+  }
+  
+  .btn-ver-detalle {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+}
