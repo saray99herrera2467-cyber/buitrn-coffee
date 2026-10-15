@@ -1,0 +1,294 @@
+.crear-producto-container {
+  min-height: 100vh;
+  background: #e9ecef;
+  padding: 20px;
+}
+
+.crear-producto-header {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.crear-producto-header h1 {
+  font-size: 22px;
+  color: #2c3e50;
+  font-weight: 500;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.btn-volver {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.btn-volver:hover {
+  background: #5a6268;
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #f5c6cb;
+}
+
+.exito-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #c3e6cb;
+}
+
+.formulario-container {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 20px;
+}
+
+form {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  padding: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2c3e50;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.btn-crear-form {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  flex: 1;
+  transition: background 0.2s;
+}
+
+.btn-crear-form:hover:not(:disabled) {
+  background: #229954;
+}
+
+.btn-crear-form:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-limpiar {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-limpiar:hover {
+  background: #5a6268;
+}
+
+/* Vista previa */
+.vista-previa {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  overflow: hidden;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.vista-previa h3 {
+  padding: 18px 25px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.previa-card {
+  padding: 25px;
+  text-align: center;
+}
+
+.previa-imagen {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.previa-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.previa-sin-imagen {
+  font-size: 48px;
+  color: #adb5bd;
+}
+
+.previa-info {
+  text-align: left;
+}
+
+.previa-nombre {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.previa-categoria {
+  color: #6c757d;
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.previa-precio {
+  font-size: 20px;
+  font-weight: 600;
+  color: #27ae60;
+  margin-bottom: 8px;
+}
+
+.previa-stock {
+  font-size: 13px;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.previa-descripcion {
+  font-size: 13px;
+  color: #6c757d;
+  line-height: 1.5;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #e9ecef;
+}
+.loading-proveedores {
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  color: #6c757d;
+  font-size: 14px;
+  text-align: center;
+}
+
+.previa-proveedor {
+  font-size: 12px;
+  color: #f39c12;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+select[name="ID_Proveedor"] {
+  background-color: white;
+}
+
+select[name="ID_Proveedor"] option {
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  .crear-producto-header {
+    flex-direction: column;
+  }
+  
+  .formulario-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .vista-previa {
+    position: static;
+  }
+}

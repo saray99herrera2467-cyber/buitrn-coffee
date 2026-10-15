@@ -1,0 +1,263 @@
+.gestion-resenas-container {
+  min-height: 100vh;
+  background: #e9ecef;
+  padding: 20px;
+}
+
+.gestion-resenas-header {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gestion-resenas-header h1 {
+  font-size: 22px;
+  color: #2c3e50;
+  font-weight: 500;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.btn-volver {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.btn-volver:hover {
+  background: #5a6268;
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #f5c6cb;
+}
+
+.exito-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #c3e6cb;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #6c757d;
+}
+
+.filtros-resenas {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filtro-btn {
+  padding: 8px 20px;
+  border: 1px solid #ced4da;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.filtro-btn:hover {
+  background: #e9ecef;
+}
+
+.filtro-btn.active {
+  background: #2c3e50;
+  color: white;
+  border-color: #2c3e50;
+}
+
+.resenas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+.resena-admin-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.resena-admin-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.resena-admin-header {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.resena-producto {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.estado-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.estado-badge.pendiente {
+  background: #fff3e0;
+  color: #e67e22;
+}
+
+.estado-badge.aprobada {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.estado-badge.rechazada {
+  background: #fce4ec;
+  color: #c62828;
+}
+
+.resena-admin-body {
+  padding: 20px;
+}
+
+.resena-usuario {
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.resena-calificacion {
+  margin-bottom: 12px;
+}
+
+.resena-calificacion .estrella-llena {
+  color: #f39c12;
+  font-size: 16px;
+}
+
+.resena-calificacion .estrella-vacia {
+  color: #ddd;
+  font-size: 16px;
+}
+
+.resena-comentario {
+  color: #495057;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.resena-fecha {
+  color: #6c757d;
+  font-size: 12px;
+}
+
+.resena-admin-actions {
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-aprobar {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.btn-aprobar:hover {
+  background: #229954;
+}
+
+.btn-rechazar {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.btn-rechazar:hover {
+  background: #c0392b;
+}
+
+.sin-datos {
+  text-align: center;
+  padding: 60px;
+  background: white;
+  border-radius: 8px;
+  color: #6c757d;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .gestion-resenas-container {
+    padding: 15px;
+  }
+  
+  .gestion-resenas-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .resenas-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filtros-resenas {
+    justify-content: center;
+  }
+  
+  .resena-admin-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .resena-admin-actions {
+    justify-content: center;
+  }
+}

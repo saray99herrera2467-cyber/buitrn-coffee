@@ -1,0 +1,149 @@
+.resenas-container {
+  margin-top: 40px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+}
+
+.resenas-header {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #FFEFE0;
+}
+
+.resenas-header h3 {
+  font-size: 20px;
+  color: #4E342E;
+  margin-bottom: 10px;
+}
+
+.promedio-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.estrella-llena {
+  color: #FFAB40;
+  font-size: 18px;
+}
+
+.estrella-vacia {
+  color: #E8D8CA;
+  font-size: 18px;
+}
+
+.promedio-numero {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4E342E;
+}
+
+.total-resenas {
+  color: #7D6E66;
+  font-size: 14px;
+}
+
+.agregar-resena {
+  background: #FFFBF2;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.agregar-resena h4 {
+  margin-bottom: 15px;
+  color: #4E342E;
+}
+
+.mensaje-resena {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.calificacion-input,
+.comentario-input {
+  margin-bottom: 15px;
+}
+
+.calificacion-input label,
+.comentario-input label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.calificacion-input select {
+  padding: 8px 12px;
+  border: 1px solid #E8D8CA;
+  border-radius: 6px;
+  width: 200px;
+}
+
+.comentario-input textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #E8D8CA;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+.agregar-resena button {
+  background: #F9A15E;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.agregar-resena button:disabled {
+  opacity: 0.6;
+}
+
+.resena-card {
+  background: white;
+  border: 1px solid #FFEFE0;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.resena-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.resena-fecha {
+  color: #7D6E66;
+  font-size: 12px;
+}
+
+.resena-comentario {
+  color: #7D6E66;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.sin-resenas {
+  text-align: center;
+  padding: 30px;
+  color: #7D6E66;
+  background: #FFFBF2;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .resena-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
