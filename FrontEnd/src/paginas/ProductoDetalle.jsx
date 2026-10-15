@@ -4,7 +4,7 @@ import HeaderGlobal from "../components/HeaderGlobal";
 import Footer from "../components/Footer";
 import ResenasProducto from "../components/ResenasProducto";
 import { useCarrito } from "../context/CarritoContext";
-import "../estilos/productoDetalle.css";
+import "../estilos/productodetalle.css";
 
 function ProductoDetalle() {
   const { id } = useParams();
