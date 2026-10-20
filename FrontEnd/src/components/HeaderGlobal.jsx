@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useCarrito } from "../context/CarritoContext";
 import { useState } from "react";
+import { API_URL } from "../config.js";
 import "../estilos/header.css";
 
 function GlobalHeader() {
@@ -30,7 +31,7 @@ function GlobalHeader() {
       <header className="header">
         <img
           className="logo-img"
-          src="http://localhost:3001/imagenes/logob.png"
+          src={`${API_URL}/imagenes/logob.png`}
           alt="logo"
         />
 

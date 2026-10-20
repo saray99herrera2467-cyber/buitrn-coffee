@@ -2,6 +2,7 @@ import "../estilos/usuario.css"
 import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { API_URL } from "../config.js"
 import HistorialCompras from "../components/HistorialCompras"
 import MisPqrs from "./MisPqrs"
 
@@ -76,7 +77,7 @@ function Usuario() {
       // =====================================================
       try {
         const res = await axios.get(
-          "http://localhost:3001/api/auth/perfil",
+          `${API_URL}/api/auth/perfil`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -169,7 +170,7 @@ function Usuario() {
 
     try {
       await axios.put(
-        "http://localhost:3001/api/auth/perfil",
+        `${API_URL}/api/auth/perfil`,
         {
           Nombre_usuario: usuario.Nombre_usuario,
           Apellido: usuario.Apellido,

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from '../config.js';
 import './estilos-admin/VerUsuarios.css';
 
 const VerUsuarios = () => {
@@ -17,7 +18,7 @@ const VerUsuarios = () => {
   const obtenerUsuarios = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3001/api/auth/usuarios', {
+      const response = await axios.get(`${API_URL}/api/auth/usuarios`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

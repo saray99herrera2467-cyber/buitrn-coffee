@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from '../config.js';
 import './estilos-admin/InhabilitarUsuarios.css';
 
 const InhabilitarUsuarios = () => {
@@ -18,7 +19,7 @@ const InhabilitarUsuarios = () => {
   const obtenerUsuarios = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3001/api/auth/usuarios', {
+      const response = await axios.get(`${API_URL}/api/auth/usuarios`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -38,7 +39,7 @@ const InhabilitarUsuarios = () => {
         const token = localStorage.getItem('token');
         
         await axios.patch(
-          `http://localhost:3001/api/auth/usuarios/${id}/inhabilitar`,
+          `${API_URL}/api/auth/usuarios/${id}/inhabilitar`,
           {},
           {
             headers: {
@@ -65,7 +66,7 @@ const InhabilitarUsuarios = () => {
         const token = localStorage.getItem('token');
         
         await axios.patch(
-          `http://localhost:3001/api/auth/usuarios/${id}/habilitar`,
+          `${API_URL}/api/auth/usuarios/${id}/habilitar`,
           {},
           {
             headers: {

@@ -1,3 +1,4 @@
+import { API_URL } from "../config.js";
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
@@ -139,7 +140,7 @@ const ReciboPDF = ({ compra, usuario, fecha, fechaLimite, numeroRecibo }) => {
         {/* Header */}
         <View style={styles.header}>
           <View style={styles.logoContainer}>
-            <Image style={styles.logo} src="http://localhost:3001/imagenes/logob.png" />
+            <Image style={styles.logo} src={`${API_URL}/imagenes/logob.png`} />
             <View>
               <Text style={styles.empresaNombre}>Buitrón Coffee</Text>
               <Text style={styles.empresaDetalle}>Café de especialidad</Text>

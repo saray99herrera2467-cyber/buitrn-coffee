@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../config.js";
 import "./estilos-admin/GestionPedidos.css";
 
 const GestionPedidos = () => {
@@ -42,7 +43,7 @@ const GestionPedidos = () => {
     try {
       setCargando(true);
       const res = await axios.get(
-        "http://localhost:3001/api/pedidos/admin/todos",
+        `${API_URL}/api/pedidos/admin/todos`,
         {
           headers: { Authorization: `Bearer ${token}` },
         },
@@ -60,7 +61,7 @@ const GestionPedidos = () => {
   const verDetalle = async (pedidoId) => {
     try {
       const res = await axios.get(
-        `http://localhost:3001/api/pedidos/admin/detalle/${pedidoId}`,
+        `${API_URL}/api/pedidos/admin/detalle/${pedidoId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         },
@@ -76,7 +77,7 @@ const GestionPedidos = () => {
   const actualizarEstado = async (pedidoId, nuevoEstado) => {
     try {
       await axios.patch(
-        `http://localhost:3001/api/pedidos/admin/estado/${pedidoId}`,
+        `${API_URL}/api/pedidos/admin/estado/${pedidoId}`,
         { estado: nuevoEstado },
         { headers: { Authorization: `Bearer ${token}` } },
       );
@@ -303,7 +304,7 @@ const GestionPedidos = () => {
                   {detallePedido.map((item, idx) => (
                     <div key={idx} className="producto-detalle-item">
                       <img
-                        src={`http://localhost:3001/imagenes/${item.imagen}`}
+                        src={`${API_URL}/imagenes/${item.imagen}`}
                         alt={item.Nombre_producto}
                         onError={(e) =>
                           (e.target.src = "https://via.placeholder.com/50")

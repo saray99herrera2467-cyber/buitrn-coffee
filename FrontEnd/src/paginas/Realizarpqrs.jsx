@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../config.js";
 import "../estilos/realizar.css";
 import HeaderGlobal from "../components/HeaderGlobal";
 import Footer from "../components/Footer";
@@ -83,7 +84,7 @@ function Realizarpqrs() {
     const nuevoCodigo = generarCodigoReferencia();
 
     try {
-      const response = await axios.post("http://localhost:3001/api/pqrs", {
+      const response = await axios.post(`${API_URL}/api/pqrs`, {
         nombre: usuario.nombre,
         email: usuario.email,
         telefono: usuario.telefono,

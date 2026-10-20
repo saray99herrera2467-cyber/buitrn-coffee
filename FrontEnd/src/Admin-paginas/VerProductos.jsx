@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../config.js";
 import "./estilos-admin/VerProductos.css";
 
 const VerProductos = () => {
@@ -17,7 +18,7 @@ const VerProductos = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await axios.get("http://localhost:3001/api/productos", {
+      const response = await axios.get(`${API_URL}/api/productos`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -82,7 +83,7 @@ const VerProductos = () => {
                   <td>
                     {producto.imagen ? (
                       <img
-                        src={`http://localhost:3001/imagenes/${producto.imagen}`}
+                        src={`${API_URL}/imagenes/${producto.imagen}`}
                         alt={producto.Nombre_producto}
                         className="producto-imagen"
                         onError={(e) => {

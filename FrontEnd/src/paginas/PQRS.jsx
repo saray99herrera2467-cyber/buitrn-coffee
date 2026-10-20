@@ -1,3 +1,4 @@
+import { API_URL } from "../config.js";
   import { useEffect, useState } from "react";
   import "../estilos/pqrs.css";
   import { Link } from "react-router-dom";
@@ -8,7 +9,7 @@
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
-      fetch("http://localhost:3001/api/productos/activos")
+      fetch(`${API_URL}/api/productos/activos`)
         .then((res) => res.json())
         .then((data) => setProductos(data))
         .catch((err) => console.log(err));

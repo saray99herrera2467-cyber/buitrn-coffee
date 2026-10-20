@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from '../config.js';
 import './estilos-admin/CrearProducto.css';
 
 const CrearProducto = () => {
@@ -59,7 +60,7 @@ const CrearProducto = () => {
       const token = localStorage.getItem('token');
       
       await axios.post(
-        'http://localhost:3001/api/productos',
+        `${API_URL}/api/productos`,
         formData,
         {
           headers: {
@@ -230,7 +231,7 @@ const CrearProducto = () => {
               <div className="previa-imagen">
                 {formData.imagen ? (
                   <img 
-                    src={`http://localhost:3001/imagenes/${formData.imagen}`} 
+                    src={`${API_URL}/imagenes/${formData.imagen}`} 
                     alt={formData.Nombre_producto}
                     onError={(e) => {
                       e.target.onerror = null;

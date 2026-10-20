@@ -2,6 +2,7 @@ import { useCarrito } from "../context/CarritoContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { API_URL } from "../config.js";
 import Footer from "../components/Footer";
 import "../estilos/carrito.css";
 import { PDFDownloadLink } from '@react-pdf/renderer';
@@ -31,7 +32,7 @@ function Carrito() {
     }
 
     try {
-      const usuarioRes = await axios.get("http://localhost:3001/api/auth/perfil", {
+      const usuarioRes = await axios.get(`${API_URL}/api/auth/perfil`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUsuario(usuarioRes.data);
@@ -68,7 +69,7 @@ function Carrito() {
         total: total
       };
 
-      const pedidoRes = await axios.post("http://localhost:3001/api/pedidos", pedidoData, {
+      const pedidoRes = await axios.post(`${API_URL}/api/pedidos`, pedidoData, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -193,7 +194,7 @@ function Carrito() {
                   <tr key={item.ID_Carrito}>
                     <td className="producto-info">
                       <img 
-                        src={`http://localhost:3001/imagenes/${item.imagen}`} 
+                        src={`${API_URL}/imagenes/${item.imagen}`} 
                         alt={item.Nombre_producto}
                         onError={(e) => e.target.src = 'https://via.placeholder.com/80'}
                       />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from '../config.js';
 import './estilos-admin/InhabilitarProducto.css';
 
 const InhabilitarProducto = () => {
@@ -17,7 +18,7 @@ const InhabilitarProducto = () => {
 
   const obtenerProductos = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/productos');
+      const response = await axios.get(`${API_URL}/api/productos`);
       setProductos(response.data);
       setCargando(false);
     } catch (err) {
@@ -33,7 +34,7 @@ const InhabilitarProducto = () => {
         const token = localStorage.getItem('token');
         
         await axios.patch(
-          `http://localhost:3001/api/productos/${id}/inhabilitar`,
+          `${API_URL}/api/productos/${id}/inhabilitar`,
           {},
           {
             headers: {
@@ -60,7 +61,7 @@ const InhabilitarProducto = () => {
         const token = localStorage.getItem('token');
         
         await axios.patch(
-          `http://localhost:3001/api/productos/${id}/habilitar`,
+          `${API_URL}/api/productos/${id}/habilitar`,
           {},
           {
             headers: {
@@ -182,7 +183,7 @@ const InhabilitarProducto = () => {
                   <td>
                     {producto.imagen ? (
                       <img 
-                        src={`http://localhost:3001/imagenes/${producto.imagen}`} 
+                        src={`${API_URL}/imagenes/${producto.imagen}`} 
                         alt={producto.Nombre_producto}
                         className="producto-imagen"
                         onError={(e) => {

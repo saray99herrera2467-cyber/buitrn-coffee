@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { API_URL } from "../config.js";
 import "../estilos/catalogo.css";
 import HeaderGlobal from "../components/HeaderGlobal";
 import Footer from "../components/Footer";
@@ -25,7 +26,7 @@ function Catalogo() {
 
   useEffect(() => {
     setCargando(true);
-    fetch("http://localhost:3001/api/productos/activos")
+    fetch(`${API_URL}/api/productos/activos`)
       .then((res) => res.json())
       .then((data) => {
         setProductos(data);
@@ -56,7 +57,7 @@ function Catalogo() {
           ) : (
             productosFiltrados.map((producto) => (
               <div key={producto.ID_Producto} className="card">
-                <img src={`http://localhost:3001/imagenes/${producto.imagen}`} alt={producto.Nombre_producto} />
+                <img src={`${API_URL}/imagenes/${producto.imagen}`} alt={producto.Nombre_producto} />
                 <h3>{producto.Nombre_producto}</h3>
                 <p>{producto.Descripcion}</p>
                 <div className="card-calificacion">{renderEstrellas(producto.calificacion_promedio)}</div>

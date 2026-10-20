@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { API_URL } from "../config.js";
 import "../estilos/header.css";
 
 function HeaderIndex() {
@@ -30,7 +31,7 @@ function HeaderIndex() {
       <header className="header">
         <img
           className="logo-img"
-          src="http://localhost:3001/imagenes/logob.png"
+          src={`${API_URL}/imagenes/logob.png`}
           alt="logo"
         />
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { API_URL } from "../config.js";
 import "../estilos/consulta.css";
 import HeaderGlobal from "../components/HeaderGlobal";
 import Footer from "../components/Footer";
@@ -23,7 +24,7 @@ function Consultarpqrs() {
     }
 
     try {
-      const response = await axios.get(`http://localhost:3001/api/pqrs/consultar/${referencia}`);
+      const response = await axios.get(`${API_URL}/api/pqrs/consultar/${referencia}`);
       setEstado(response.data);
       setConsultado(true);
     } catch (err) {

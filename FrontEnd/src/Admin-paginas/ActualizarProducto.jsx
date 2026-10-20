@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from '../config.js';
 import './estilos-admin/ActualizarProducto.css';
 
 const ActualizarProducto = () => {
@@ -28,7 +29,7 @@ const ActualizarProducto = () => {
 
   const obtenerProductos = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/productos');
+      const response = await axios.get(`${API_URL}/api/productos`);
       setProductos(response.data);
       setCargando(false);
     } catch (err) {
@@ -69,7 +70,7 @@ const ActualizarProducto = () => {
       const token = localStorage.getItem('token');
       
       await axios.put(
-        `http://localhost:3001/api/productos/${productoSeleccionado.ID_Producto}`,
+        `${API_URL}/api/productos/${productoSeleccionado.ID_Producto}`,
         formData,
         {
           headers: {
@@ -145,7 +146,7 @@ const ActualizarProducto = () => {
                   <div className="producto-imagen-mini">
                     {producto.imagen ? (
                       <img 
-                        src={`http://localhost:3001/imagenes/${producto.imagen}`} 
+                        src={`${API_URL}/imagenes/${producto.imagen}`} 
                         alt={producto.Nombre_producto}
                         onError={(e) => {
                           e.target.onerror = null;
