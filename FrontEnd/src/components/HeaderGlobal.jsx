@@ -30,7 +30,7 @@ function GlobalHeader() {
       <header className="header">
         <img
           className="logo-img"
-          src="http://localhost:3001/imagenes/logob.png"
+          src={`${API_URL}/imagenes/logob.png`}
           alt="logo"
         />
 
@@ -86,3 +86,4 @@ function GlobalHeader() {
 }
 
 export default GlobalHeader;
+import { API_URL } from '../config.js';

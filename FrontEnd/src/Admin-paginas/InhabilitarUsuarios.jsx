@@ -18,7 +18,7 @@ const InhabilitarUsuarios = () => {
   const obtenerUsuarios = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3001/api/auth/usuarios', {
+      const response = await axios.get(`${API_URL}/api/auth/usuarios`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -38,7 +38,7 @@ const InhabilitarUsuarios = () => {
         const token = localStorage.getItem('token');
         
         await axios.patch(
-          `http://localhost:3001/api/auth/usuarios/${id}/inhabilitar`,
+          `${API_URL}/api/auth/usuarios/${id}/inhabilitar`,
           {},
           {
             headers: {
@@ -65,7 +65,7 @@ const InhabilitarUsuarios = () => {
         const token = localStorage.getItem('token');
         
         await axios.patch(
-          `http://localhost:3001/api/auth/usuarios/${id}/habilitar`,
+          `${API_URL}/api/auth/usuarios/${id}/habilitar`,
           {},
           {
             headers: {
@@ -238,3 +238,4 @@ const InhabilitarUsuarios = () => {
 };
 
 export default InhabilitarUsuarios;
+import { API_URL } from '../config.js';

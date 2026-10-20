@@ -9,7 +9,7 @@ function Index() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/productos/activos")
+    fetch(`${API_URL}/api/productos/activos`)
       .then((res) => res.json())
       .then((data) => setProductos(data))
       .catch((err) => console.log(err));
@@ -50,7 +50,7 @@ function Index() {
             >
 
               <img
-                src={`http://localhost:3001/imagenes/${producto.imagen}`}
+                src={`${API_URL}/imagenes/${producto.imagen}`}
                 alt={producto.Nombre_producto}
               />
 
@@ -83,3 +83,4 @@ function Index() {
 }
 
 export default Index;
+import { API_URL } from '../config.js';

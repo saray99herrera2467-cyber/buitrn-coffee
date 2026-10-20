@@ -83,7 +83,7 @@ function Realizarpqrs() {
     const nuevoCodigo = generarCodigoReferencia();
 
     try {
-      const response = await axios.post("http://localhost:3001/api/pqrs", {
+      const response = await axios.post(`${API_URL}/api/pqrs`, {
         nombre: usuario.nombre,
         email: usuario.email,
         telefono: usuario.telefono,
@@ -206,3 +206,4 @@ function Realizarpqrs() {
 }
 
 export default Realizarpqrs;
+import { API_URL } from '../config.js';

@@ -17,7 +17,7 @@ const VerUsuarios = () => {
   const obtenerUsuarios = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3001/api/auth/usuarios', {
+      const response = await axios.get(`${API_URL}/api/auth/usuarios`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -157,3 +157,4 @@ const VerUsuarios = () => {
 };
 
 export default VerUsuarios;
+import { API_URL } from '../config.js';

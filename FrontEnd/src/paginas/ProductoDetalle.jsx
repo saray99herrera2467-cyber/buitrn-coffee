@@ -14,7 +14,7 @@ function ProductoDetalle() {
   const { agregarAlCarrito } = useCarrito();
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/productos/${id}`)
+    fetch(`${API_URL}/api/productos/${id}`)
       .then((res) => res.json())
       .then((data) => setProducto(data))
       .catch((err) => console.log(err));
@@ -53,7 +53,7 @@ function ProductoDetalle() {
       <div className="detalle-container">
         <div className="detalle-imagen">
           <img
-            src={`http://localhost:3001/imagenes/${producto.imagen}`}
+            src={`${API_URL}/imagenes/${producto.imagen}`}
             alt={producto.Nombre_producto}
             onError={(e) => {
               e.target.src =
@@ -119,3 +119,4 @@ function ProductoDetalle() {
 }
 
 export default ProductoDetalle;
+import { API_URL } from '../config.js';

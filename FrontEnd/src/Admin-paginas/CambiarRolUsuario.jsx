@@ -21,7 +21,7 @@ const CambiarRolUsuario = () => {
   const obtenerUsuarios = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3001/api/auth/usuarios', {
+      const response = await axios.get(`${API_URL}/api/auth/usuarios`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -58,7 +58,7 @@ const CambiarRolUsuario = () => {
       const token = localStorage.getItem('token');
       
       await axios.patch(
-        `http://localhost:3001/api/auth/usuarios/${usuarioSeleccionado.ID_Usuario}/cambiar-rol`,
+        `${API_URL}/api/auth/usuarios/${usuarioSeleccionado.ID_Usuario}/cambiar-rol`,
         { nuevoRol: parseInt(nuevoRol) },
         {
           headers: {
@@ -237,3 +237,4 @@ const CambiarRolUsuario = () => {
 };
 
 export default CambiarRolUsuario;
+import { API_URL } from '../config.js';

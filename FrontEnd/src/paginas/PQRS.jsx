@@ -8,7 +8,7 @@
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
-      fetch("http://localhost:3001/api/productos/activos")
+      fetch(`${API_URL}/api/productos/activos`)
         .then((res) => res.json())
         .then((data) => setProductos(data))
         .catch((err) => console.log(err));
@@ -128,3 +128,4 @@
   }
 
   export default PQRS;
+import { API_URL } from '../config.js';

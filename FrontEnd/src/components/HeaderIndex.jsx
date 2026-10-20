@@ -30,7 +30,7 @@ function HeaderIndex() {
       <header className="header">
         <img
           className="logo-img"
-          src="http://localhost:3001/imagenes/logob.png"
+          src={`${API_URL}/imagenes/logob.png`}
           alt="logo"
         />
 
@@ -73,3 +73,4 @@ function HeaderIndex() {
 }
 
 export default HeaderIndex;
+import { API_URL } from '../config.js';

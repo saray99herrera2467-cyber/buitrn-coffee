@@ -15,7 +15,7 @@ const MisPqrs = () => {
   const obtenerMisPqrs = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3001/api/pqrs/mis-pqrs', {
+      const response = await axios.get(`${API_URL}/api/pqrs/mis-pqrs`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setPqrsList(response.data);
@@ -181,3 +181,4 @@ const MisPqrs = () => {
 };
 
 export default MisPqrs;
+import { API_URL } from '../config.js';

@@ -22,7 +22,7 @@ const VerPqrs = () => {
   const obtenerPqrs = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3001/api/pqrs/admin', {
+      const response = await axios.get(`${API_URL}/api/pqrs/admin`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setPqrsList(response.data);
@@ -57,7 +57,7 @@ const VerPqrs = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.patch(
-        `http://localhost:3001/api/pqrs/admin/${pqrsSeleccionada.ID_PQRS}`,
+        `${API_URL}/api/pqrs/admin/${pqrsSeleccionada.ID_PQRS}`,
         { estado: 'resuelta', respuesta },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -76,7 +76,7 @@ const VerPqrs = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.patch(
-        `http://localhost:3001/api/pqrs/admin/${pqrsSeleccionada.ID_PQRS}`,
+        `${API_URL}/api/pqrs/admin/${pqrsSeleccionada.ID_PQRS}`,
         { estado: nuevoEstado, respuesta: respuesta || null },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -254,3 +254,4 @@ const VerPqrs = () => {
 };
 
 export default VerPqrs;
+import { API_URL } from '../config.js';

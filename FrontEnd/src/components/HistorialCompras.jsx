@@ -21,7 +21,7 @@ function HistorialCompras({ usuario }) {
 
   const cargarUsuario = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/api/auth/perfil", {
+      const res = await axios.get(`${API_URL}/api/auth/perfil`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUsuarioLogueado(res.data);
@@ -33,7 +33,7 @@ function HistorialCompras({ usuario }) {
   const cargarHistorial = async () => {
     try {
       setCargando(true);
-      const res = await axios.get("http://localhost:3001/api/pedidos/historial", {
+      const res = await axios.get(`${API_URL}/api/pedidos/historial`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setPedidos(res.data);
@@ -48,7 +48,7 @@ function HistorialCompras({ usuario }) {
 
   const verDetalle = async (pedidoId) => {
     try {
-      const res = await axios.get(`http://localhost:3001/api/pedidos/detalle/${pedidoId}`, {
+      const res = await axios.get(`${API_URL}/api/pedidos/detalle/${pedidoId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setDetallePedido(res.data);
@@ -215,7 +215,7 @@ function HistorialCompras({ usuario }) {
                   {detallePedido.items?.map((item, idx) => (
                     <div key={idx} className="producto-detalle-item">
                       <img 
-                        src={`http://localhost:3001/imagenes/${item.imagen}`} 
+                        src={`${API_URL}/imagenes/${item.imagen}`} 
                         alt={item.Nombre_producto}
                         onError={(e) => e.target.src = 'https://via.placeholder.com/50'}
                       />
@@ -284,3 +284,4 @@ function HistorialCompras({ usuario }) {
 }
 
 export default HistorialCompras;
+import { API_URL } from '../config.js';

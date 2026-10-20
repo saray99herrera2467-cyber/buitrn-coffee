@@ -76,7 +76,7 @@ function Usuario() {
       // =====================================================
       try {
         const res = await axios.get(
-          "http://localhost:3001/api/auth/perfil",
+          `${API_URL}/api/auth/perfil`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -169,7 +169,7 @@ function Usuario() {
 
     try {
       await axios.put(
-        "http://localhost:3001/api/auth/perfil",
+        `${API_URL}/api/auth/perfil`,
         {
           Nombre_usuario: usuario.Nombre_usuario,
           Apellido: usuario.Apellido,
@@ -480,3 +480,4 @@ function Usuario() {
 }
 
 export default Usuario
+import { API_URL } from '../config.js';

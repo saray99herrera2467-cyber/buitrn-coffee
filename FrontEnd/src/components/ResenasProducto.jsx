@@ -20,7 +20,7 @@ const ResenasProducto = ({ productoId, onCalificacionActualizada }) => {
 
   const cargarResenas = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/api/resenas/producto/${productoId}`);
+      const response = await axios.get(`${API_URL}/api/resenas/producto/${productoId}`);
       setResenas(response.data);
       setCargando(false);
     } catch (err) {
@@ -31,7 +31,7 @@ const ResenasProducto = ({ productoId, onCalificacionActualizada }) => {
 
   const cargarPromedio = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/api/resenas/producto/${productoId}/promedio`);
+      const response = await axios.get(`${API_URL}/api/resenas/producto/${productoId}/promedio`);
       setPromedio(response.data);
       if (onCalificacionActualizada) {
         onCalificacionActualizada(response.data.promedio, response.data.total);
@@ -57,7 +57,7 @@ const ResenasProducto = ({ productoId, onCalificacionActualizada }) => {
     setEnviando(true);
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:3001/api/resenas',
+      await axios.post(`${API_URL}/api/resenas`,
         { producto_id: productoId, calificacion: parseInt(formData.calificacion), comentario: formData.comentario },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -141,3 +141,4 @@ const ResenasProducto = ({ productoId, onCalificacionActualizada }) => {
 };
 
 export default ResenasProducto;
+import { API_URL } from '../config.js';

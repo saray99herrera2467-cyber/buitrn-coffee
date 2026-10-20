@@ -17,7 +17,7 @@ const VerProductos = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await axios.get("http://localhost:3001/api/productos", {
+      const response = await axios.get(`${API_URL}/api/productos`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -82,7 +82,7 @@ const VerProductos = () => {
                   <td>
                     {producto.imagen ? (
                       <img
-                        src={`http://localhost:3001/imagenes/${producto.imagen}`}
+                        src={`${API_URL}/imagenes/${producto.imagen}`}
                         alt={producto.Nombre_producto}
                         className="producto-imagen"
                         onError={(e) => {
@@ -113,3 +113,4 @@ const VerProductos = () => {
 };
 
 export default VerProductos;
+import { API_URL } from '../config.js';

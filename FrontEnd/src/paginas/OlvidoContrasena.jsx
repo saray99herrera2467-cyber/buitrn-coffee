@@ -17,7 +17,7 @@ function OlvidoContrasena() {
     e.preventDefault();
     setCargando(true);
     try {
-      await axios.post("http://localhost:3001/api/auth/olvido-contrasena", { Correo: email });
+      await axios.post(`${API_URL}/api/auth/olvido-contrasena`, { Correo: email });
       setMensaje({ texto: "Código enviado a tu correo", tipo: "exito" });
       setPaso(2);
     } catch (error) {
@@ -31,7 +31,7 @@ function OlvidoContrasena() {
     e.preventDefault();
     setCargando(true);
     try {
-      await axios.post("http://localhost:3001/api/auth/verificar-codigo", { Correo: email, codigo });
+      await axios.post(`${API_URL}/api/auth/verificar-codigo`, { Correo: email, codigo });
       setMensaje({ texto: "Código verificado", tipo: "exito" });
       setPaso(3);
     } catch (error) {
@@ -54,7 +54,7 @@ function OlvidoContrasena() {
 
     setCargando(true);
     try {
-      await axios.post("http://localhost:3001/api/auth/restablecer-contrasena", {
+      await axios.post(`${API_URL}/api/auth/restablecer-contrasena`, {
         Correo: email,
         codigo,
         nuevaClave
@@ -111,3 +111,4 @@ function OlvidoContrasena() {
 }
 
 export default OlvidoContrasena;
+import { API_URL } from '../config.js';

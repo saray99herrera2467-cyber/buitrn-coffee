@@ -23,7 +23,7 @@ const obtenerCarrito = async () => {
   console.log("🟢 Obteniendo carrito...");
   
   try {
-    const res = await axios.get("http://localhost:3001/api/carrito", {
+    const res = await axios.get(`${API_URL}/api/carrito`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     console.log("✅ Carrito recibido:", res.data);
@@ -46,7 +46,7 @@ const agregarAlCarrito = async (productoId, cantidad = 1) => {
 
   try {
     const response = await axios.post(
-      "http://localhost:3001/api/carrito/agregar",
+      `${API_URL}/api/carrito/agregar`,
       { productoId, cantidad },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -69,7 +69,7 @@ const agregarAlCarrito = async (productoId, cantidad = 1) => {
     if (!token) return;
 
     try {
-      await axios.put(`http://localhost:3001/api/carrito/actualizar/${itemId}`,
+      await axios.put(`${API_URL}/api/carrito/actualizar/${itemId}`,
         { cantidad },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -83,7 +83,7 @@ const agregarAlCarrito = async (productoId, cantidad = 1) => {
     if (!token) return;
 
     try {
-      await axios.delete(`http://localhost:3001/api/carrito/eliminar/${itemId}`, {
+      await axios.delete(`${API_URL}/api/carrito/eliminar/${itemId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       await obtenerCarrito();
@@ -96,7 +96,7 @@ const agregarAlCarrito = async (productoId, cantidad = 1) => {
   if (!token) return;
 
   try {
-    await axios.delete('http://localhost:3001/api/carrito/vaciar', {
+    await axios.delete(`${API_URL}/api/carrito/vaciar`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     setCarrito({ items: [], total: 0 });
@@ -123,3 +123,4 @@ const agregarAlCarrito = async (productoId, cantidad = 1) => {
     </CarritoContext.Provider>
   );
 };
+import { API_URL } from '../config.js';

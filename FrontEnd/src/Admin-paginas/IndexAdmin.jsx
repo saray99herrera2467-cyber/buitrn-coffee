@@ -3,9 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './estilos-admin/IndexAdmin.css';
 
-// Ajusta esta URL según el app.use(...) de tu servidor Express.
-const API_BASE =
-  import.meta.env.VITE_API_URL || 'http://localhost:3001/api/admin';
+const API_BASE = `${API_URL}/api/admin`;
 
 const IndexAdmin = () => {
   const navigate = useNavigate();
@@ -533,3 +531,4 @@ const IndexAdmin = () => {
 };
 
 export default IndexAdmin;
+import { API_URL } from '../config.js';

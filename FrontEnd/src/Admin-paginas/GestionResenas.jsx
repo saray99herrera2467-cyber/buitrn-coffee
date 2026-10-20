@@ -18,7 +18,7 @@ const GestionResenas = () => {
   const obtenerResenas = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3001/api/resenas/admin', {
+      const response = await axios.get(`${API_URL}/api/resenas/admin`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setResenas(response.data);
@@ -34,7 +34,7 @@ const GestionResenas = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.patch(
-        `http://localhost:3001/api/resenas/admin/${id}`,
+        `${API_URL}/api/resenas/admin/${id}`,
         { estado },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -139,3 +139,4 @@ const GestionResenas = () => {
 };
 
 export default GestionResenas;
+import { API_URL } from '../config.js';
