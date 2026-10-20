@@ -33,6 +33,32 @@ const conNivelStock = (p) => ({
   nivel_stock: p.stock <= 0 ? "Crítico - Sin stock" : p.stock <= 5 ? "Muy bajo" : "Bajo",
 });
 
+const obtenerProductosMasVendidos = async (soloActivos, limite) => {
+  const { data: detalles, error } = await supabase
+    .from("detalle_pedido")
+    .select("cantidad, producto(id, nombre_producto, precio, imagen, estado)");
+
+  if (error) throw error;
+
+  const ventasPorProducto = new Map();
+
+  for (const detalle of detalles || []) {
+    const producto = detalle.producto;
+    if (!producto || (soloActivos && !producto.estado)) continue;
+
+    const venta = ventasPorProducto.get(producto.id) || {
+      ...producto,
+      cantidad_vendida: 0,
+    };
+    venta.cantidad_vendida += Number(detalle.cantidad) || 0;
+    ventasPorProducto.set(producto.id, venta);
+  }
+
+  return [...ventasPorProducto.values()]
+    .sort((a, b) => b.cantidad_vendida - a.cantidad_vendida)
+    .slice(0, limite);
+};
+
 // =============================================
 // GET: Resumen productos (más vendidos + stock bajo)
 // =============================================
@@ -47,16 +73,15 @@ router.get("/resumen-productos", verificarToken, async (req, res) => {
   }
 
   try {
-    const [{ data: productosMasVendidos, error: errTop }, { data: stockBajoRaw, error: errStock }] =
+    const [productosMasVendidos, { data: stockBajoRaw, error: errStock }] =
       await Promise.all([
-        supabase.rpc("top_productos_vendidos", { solo_activos: false, limite: 10 }),
+        obtenerProductosMasVendidos(false, 10),
         supabase.from("producto").select("id, nombre_producto, stock, precio, imagen").lte("stock", 10).order("stock", { ascending: true }),
       ]);
 
-    if (errTop) throw errTop;
     if (errStock) throw errStock;
 
-    const productosStockBajo = stockBajoRaw.map(conNivelStock);
+    const productosStockBajo = (stockBajoRaw || []).map(conNivelStock);
 
     if (productosStockBajo.length > 0) {
       const adminEmail = process.env.ADMIN_EMAIL || "admin@buitroncoffee.com";
@@ -109,22 +134,19 @@ router.get("/resumen-productos", verificarToken, async (req, res) => {
 // GET: Top productos
 // =============================================
 router.get("/top-productos", verificarToken, async (req, res) => {
-  const { data, error } = await supabase.rpc("top_productos_vendidos", {
-    solo_activos: true,
-    limite: 10,
-  });
-
-  if (error) {
+  try {
+    const data = await obtenerProductosMasVendidos(true, 10);
+    res.json({
+      success: true,
+      data,
+    });
+  } catch (err) {
+    console.error("Error al obtener productos más vendidos:", err);
     return res.status(500).json({
       success: false,
       message: "Error al obtener estadísticas",
     });
   }
-
-  res.json({
-    success: true,
-    data,
-  });
 });
 
 // =============================================

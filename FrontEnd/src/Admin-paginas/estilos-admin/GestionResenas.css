@@ -1,14 +1,33 @@
-.gestion-resenas-container {
-  min-height: 100vh;
-  background: #e9ecef;
-  padding: 20px;
+
+:root {
+  --cafe: #4e342e;
+  --cafe-oscuro: #35211d;
+  --cafe-medio: #795548;
+  --terracota: #68402f;
+  --naranja: #d97832;
+  --naranja-oscuro: #bd5d20;
+  --crema: #f7f1e8;
+  --crema-claro: #fffdf9;
+  --texto: #34241f;
+  --texto-suave: #82736b;
+  --borde: #eadfd3;
 }
 
+/* CONTENEDOR PRINCIPAL */
+.gestion-resenas-container {
+  min-height: 100vh;
+  background: var(--crema);
+  padding: 20px;
+  color: var(--texto);
+}
+
+/* ENCABEZADO */
 .gestion-resenas-header {
-  background: white;
+  background: var(--crema-claro);
   padding: 20px 30px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  border: 1px solid var(--borde);
+  box-shadow: 0 3px 10px rgba(53, 33, 29, 0.07);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -17,53 +36,58 @@
 
 .gestion-resenas-header h1 {
   font-size: 22px;
-  color: #2c3e50;
-  font-weight: 500;
+  color: var(--cafe);
+  font-weight: 700;
   margin: 0;
   flex: 1;
   text-align: center;
 }
 
+/* BOTÓN VOLVER */
 .btn-volver {
-  background: #6c757d;
+  background: var(--cafe-medio);
   color: white;
   border: none;
-  padding: 8px 20px;
-  border-radius: 6px;
+  padding: 9px 20px;
+  border-radius: 7px;
   cursor: pointer;
   font-size: 14px;
-  transition: background 0.2s;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .btn-volver:hover {
-  background: #5a6268;
+  background: var(--cafe-oscuro);
+  transform: translateY(-1px);
 }
 
+/* MENSAJES */
 .error-message {
-  background: #f8d7da;
-  color: #721c24;
+  background: #fbe9e7;
+  color: #9b3027;
   padding: 12px 20px;
-  border-radius: 6px;
+  border-radius: 8px;
   margin-bottom: 20px;
-  border: 1px solid #f5c6cb;
+  border: 1px solid #edc5bf;
 }
 
 .exito-message {
-  background: #d4edda;
-  color: #155724;
+  background: #e8f2e5;
+  color: #35633a;
   padding: 12px 20px;
-  border-radius: 6px;
+  border-radius: 8px;
   margin-bottom: 20px;
-  border: 1px solid #c3e6cb;
+  border: 1px solid #c9dfc3;
 }
 
 .loading {
   text-align: center;
   padding: 40px;
   font-size: 18px;
-  color: #6c757d;
+  color: var(--cafe-medio);
 }
 
+/* FILTROS */
 .filtros-resenas {
   display: flex;
   gap: 10px;
@@ -72,48 +96,56 @@
 }
 
 .filtro-btn {
-  padding: 8px 20px;
-  border: 1px solid #ced4da;
-  background: white;
-  border-radius: 6px;
+  padding: 9px 20px;
+  border: 1px solid var(--borde);
+  background: var(--crema-claro);
+  color: var(--cafe);
+  border-radius: 7px;
   cursor: pointer;
   font-size: 14px;
+  font-weight: 600;
   transition: all 0.2s;
 }
 
 .filtro-btn:hover {
-  background: #e9ecef;
+  background: #efe2d3;
+  border-color: #d8c3ae;
 }
 
 .filtro-btn.active {
-  background: #2c3e50;
+  background: var(--naranja);
   color: white;
-  border-color: #2c3e50;
+  border-color: var(--naranja);
+  box-shadow: 0 3px 8px rgba(189, 93, 32, 0.18);
 }
 
+/* CUADRÍCULA DE RESEÑAS */
 .resenas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
   gap: 20px;
 }
 
+/* TARJETA */
 .resena-admin-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  background: var(--crema-claro);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(53, 33, 29, 0.06);
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .resena-admin-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(53, 33, 29, 0.12);
 }
 
+/* CABECERA DE LA TARJETA */
 .resena-admin-header {
-  background: #f8f9fa;
+  background: #f0e5d8;
   padding: 15px 20px;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid var(--borde);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -122,40 +154,45 @@
 }
 
 .resena-producto {
-  font-weight: 600;
-  color: #2c3e50;
+  font-weight: 700;
+  color: var(--cafe);
   font-size: 14px;
 }
 
+/* ESTADOS */
 .estado-badge {
-  padding: 4px 12px;
+  padding: 5px 12px;
   border-radius: 20px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .estado-badge.pendiente {
-  background: #fff3e0;
-  color: #e67e22;
+  background: #fff0d8;
+  color: #99591d;
+  border: 1px solid #f0d3a7;
 }
 
 .estado-badge.aprobada {
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: #e5f0df;
+  color: #38623a;
+  border: 1px solid #c9dfc0;
 }
 
 .estado-badge.rechazada {
-  background: #fce4ec;
-  color: #c62828;
+  background: #f8e4df;
+  color: #a33c30;
+  border: 1px solid #ebc5bd;
 }
 
+/* CONTENIDO DE LA RESEÑA */
 .resena-admin-body {
   padding: 20px;
 }
 
 .resena-usuario {
-  font-weight: 500;
-  color: #2c3e50;
+  font-weight: 700;
+  color: var(--cafe);
   margin-bottom: 8px;
   font-size: 14px;
 }
@@ -165,99 +202,150 @@
 }
 
 .resena-calificacion .estrella-llena {
-  color: #f39c12;
-  font-size: 16px;
+  color: var(--naranja);
+  font-size: 18px;
 }
 
 .resena-calificacion .estrella-vacia {
-  color: #ddd;
-  font-size: 16px;
+  color: #d9cfc5;
+  font-size: 18px;
 }
 
 .resena-comentario {
-  color: #495057;
-  line-height: 1.5;
+  color: #594940;
+  line-height: 1.6;
   margin-bottom: 12px;
   font-size: 14px;
+  overflow-wrap: anywhere;
 }
 
 .resena-fecha {
-  color: #6c757d;
+  color: var(--texto-suave);
   font-size: 12px;
 }
 
+/* ACCIONES */
 .resena-admin-actions {
   padding: 15px 20px;
-  background: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+  background: #faf5ee;
+  border-top: 1px solid var(--borde);
   display: flex;
   gap: 10px;
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .btn-aprobar {
-  background: #27ae60;
+  background: #527747;
   color: white;
   border: none;
-  padding: 6px 18px;
-  border-radius: 5px;
+  padding: 8px 18px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 13px;
-  transition: background 0.2s;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .btn-aprobar:hover {
-  background: #229954;
+  background: #3e6135;
+  transform: translateY(-1px);
 }
 
 .btn-rechazar {
-  background: #e74c3c;
+  background: #a94335;
   color: white;
   border: none;
-  padding: 6px 18px;
-  border-radius: 5px;
+  padding: 8px 18px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 13px;
-  transition: background 0.2s;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .btn-rechazar:hover {
-  background: #c0392b;
+  background: #873329;
+  transform: translateY(-1px);
 }
 
+/* SIN RESEÑAS */
 .sin-datos {
   text-align: center;
-  padding: 60px;
-  background: white;
-  border-radius: 8px;
-  color: #6c757d;
+  padding: 60px 20px;
+  background: var(--crema-claro);
+  border: 1px dashed #d8c3ae;
+  border-radius: 12px;
+  color: var(--texto-suave);
   font-size: 16px;
 }
 
+/* ACCESIBILIDAD */
+.btn-volver:focus-visible,
+.filtro-btn:focus-visible,
+.btn-aprobar:focus-visible,
+.btn-rechazar:focus-visible {
+  outline: 3px solid #e7a66f;
+  outline-offset: 3px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .gestion-resenas-container {
     padding: 15px;
   }
-  
+
   .gestion-resenas-header {
     flex-direction: column;
     text-align: center;
+    padding: 20px;
   }
-  
+
+  .gestion-resenas-header h1 {
+    font-size: 20px;
+  }
+
   .resenas-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .filtros-resenas {
     justify-content: center;
   }
-  
+
+  .filtro-btn {
+    flex: 1 1 auto;
+  }
+
   .resena-admin-header {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .resena-admin-actions {
     justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .gestion-resenas-container {
+    padding: 10px;
+  }
+
+  .gestion-resenas-header {
+    padding: 16px;
+  }
+
+  .resena-admin-body {
+    padding: 16px;
+  }
+
+  .resena-admin-actions {
+    padding: 12px;
+  }
+
+  .btn-aprobar,
+  .btn-rechazar {
+    flex: 1;
   }
 }

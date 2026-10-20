@@ -29,9 +29,15 @@ app.use("/api/resenas", resenasRoutes);
 app.use("/api/promociones", promocionesRoutes);
 app.use("/api/pagos", pagoRoutes);
 app.use("/api/estadisticas", estadisticasRoutes);
+app.use("/api/admin", estadisticasRoutes);
 app.use("/api/verificacion-email", verificacionRoutes);
+ //  SERVER
+const PORT = process.env.PORT || 3000;
 
-// 🚀 SERVER
-app.listen(process.env.PORT, () => {
-  console.log("Servidor corriendo en puerto", process.env.PORT);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log("Servidor corriendo en puerto", PORT);
+  });
+}
+
+module.exports = app;
