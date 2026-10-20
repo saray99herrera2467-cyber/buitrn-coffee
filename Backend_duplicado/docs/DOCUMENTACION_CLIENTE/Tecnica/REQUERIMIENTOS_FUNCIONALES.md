@@ -252,3 +252,11 @@ Es un sistema independiente con arquitectura cliente-servidor:
 
 
 # 7 APROBACIONES 
+
+
+| Rol | Nombre | Cargo | Firma | Fecha |
+|-----|--------|-------|-------|-------|
+| Cliente | | Buitrón Coffee | | |
+| Líder del proyecto | Saray |Backend y estar pendiente de que todo se haga  | | |
+| Analista de requerimientos | Alexander | Revisar lo que falta y lo que toca corregir | | |
+| Desarrollador | Sharon |Hacer fronted y backend y pruebas| | |
